@@ -1,6 +1,6 @@
 # The Last of Us — Fan Landing Page
 
-> *"Quando estiver perdido na escuridão, procure a luz."*
+> _"Quando estiver perdido na escuridão, procure a luz."_
 
 ![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)
@@ -9,12 +9,6 @@
 ![RAWG API](https://img.shields.io/badge/RAWG%20API-live%20data-d4a853?style=flat-square)
 
 Página de fã imersiva e cinematográfica do jogo **The Last of Us** (Naughty Dog, 2013), construída como projeto de portfólio com foco em animações avançadas, design system temático e consumo de API externa em tempo real.
-
----
-
-## Demonstração
-
-> **Vídeo de background:** adicione `public/videos/background.mp4` manualmente após clonar o repositório — o arquivo é grande e não está versionado (veja [Assets](#-assets)).
 
 ---
 
@@ -35,16 +29,16 @@ Página de fã imersiva e cinematográfica do jogo **The Last of Us** (Naughty D
 
 ## 🛠 Stack
 
-| Camada | Tecnologia |
-|---|---|
-| Framework | Next.js 16.2 (App Router) |
-| Linguagem | TypeScript 5 |
+| Camada      | Tecnologia                                            |
+| ----------- | ----------------------------------------------------- |
+| Framework   | Next.js 16.2 (App Router)                             |
+| Linguagem   | TypeScript 5                                          |
 | Estilização | Tailwind CSS v4 (config 100% CSS via `@theme inline`) |
-| Animações | Framer Motion v12 |
-| Partículas | tsParticles — SparklesCore |
-| Fontes | Google Fonts — Russo One + Chakra Petch |
-| API externa | RAWG Video Games Database |
-| Imagens | Next.js `<Image>` com otimização automática |
+| Animações   | Framer Motion v12                                     |
+| Partículas  | tsParticles — SparklesCore                            |
+| Fontes      | Google Fonts — Russo One + Chakra Petch               |
+| API externa | RAWG Video Games Database                             |
+| Imagens     | Next.js `<Image>` com otimização automática           |
 
 ---
 
@@ -53,6 +47,7 @@ Página de fã imersiva e cinematográfica do jogo **The Last of Us** (Naughty D
 Este projeto consome a [RAWG API](https://rawg.io/apidocs) para exibir **dados reais do jogo** diretamente na página.
 
 **Dados exibidos em tempo real:**
+
 - 🏆 Metacritic Score oficial
 - ⭐ Rating dos usuários RAWG (0–5)
 - 🎮 Plataformas disponíveis
@@ -66,14 +61,6 @@ app/api/game/route.ts  →  GET /api/game  →  RAWG API
                     components/game-summary.tsx
                     (Server Component — fetch direto)
 ```
-
-### Como obter sua chave gratuita
-
-1. Acesse [rawg.io/apidocs](https://rawg.io/apidocs)
-2. Clique em **Get API Key** e crie uma conta (gratuito, sem cartão)
-3. Copie a chave e adicione ao `.env.local` (veja abaixo)
-
----
 
 ## 🚀 Instalação
 
@@ -93,34 +80,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Acesse [http://localhost:3001](http://localhost:3001).
-
 ---
-
-## 🔑 Variáveis de Ambiente
-
-Crie um arquivo `.env.local` na raiz do projeto:
-
-```env
-# RAWG Video Games Database — https://rawg.io/apidocs
-# Gratuito: 500.000 requests/mês, sem cartão de crédito
-RAWG_API_KEY=sua_chave_aqui
-```
-
-> Sem a chave configurada, a seção de ratings exibe dados estáticos como fallback.
-
----
-
-## 📁 Assets
-
-O vídeo de background **não está versionado** (31MB). Para usar localmente:
-
-1. Adicione seu vídeo em `public/videos/background.mp4`
-2. Formato recomendado: MP4, codec H.264, 1920×1080, loop limpo
-
-Para produção, hospede externamente (Cloudinary, Supabase Storage, AWS S3) e atualize o `src` em:
-- [`components/video-background.tsx`](components/video-background.tsx)
-- [`components/hero-section.tsx`](components/hero-section.tsx)
 
 ---
 
@@ -159,15 +119,15 @@ last-of-us-landing/
 
 Todas as cores e tokens vivem em `app/globals.css` via `@theme inline {}` (Tailwind CSS v4 — sem `tailwind.config.ts`):
 
-| Token | Hex | Uso |
-|---|---|---|
-| `--color-background` | `#0A0A08` | Base da página |
-| `--color-surface` | `#111108` | Cards e seções alternadas |
-| `--color-primary` | `#D4A853` | Âmbar — CTAs, destaques, sparkles |
-| `--color-forest` | `#3D6B32` | Verde floresta — acentos |
-| `--color-danger` | `#8B1A1A` | Vermelho — infectados |
+| Token                | Hex       | Uso                                      |
+| -------------------- | --------- | ---------------------------------------- |
+| `--color-background` | `#0A0A08` | Base da página                           |
+| `--color-surface`    | `#111108` | Cards e seções alternadas                |
+| `--color-primary`    | `#D4A853` | Âmbar — CTAs, destaques, sparkles        |
+| `--color-forest`     | `#3D6B32` | Verde floresta — acentos                 |
+| `--color-danger`     | `#8B1A1A` | Vermelho — infectados                    |
 | `--color-foreground` | `#E8DCC8` | Texto principal (pergaminho envelhecido) |
-| `--color-muted` | `#6B6358` | Texto secundário |
+| `--color-muted`      | `#6B6358` | Texto secundário                         |
 
 ---
 

@@ -128,7 +128,7 @@ export default function CharacterCarousel() {
           className="mt-4 text-4xl md:text-6xl text-foreground"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          OS PERSONAGENS
+          PERSONAGENS
         </motion.h2>
       </div>
 

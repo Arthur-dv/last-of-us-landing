@@ -115,7 +115,7 @@ export default function EnemiesSection() {
             className="text-4xl md:text-6xl text-foreground"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            OS INFECTADOS
+            INFECTADOS
           </h2>
           <p className="mt-4 max-w-lg text-muted text-sm leading-relaxed">
             A infecção cerebral por Cordyceps transforma humanos em criaturas agressivas ao longo de quatro estágios. Cada estágio mais perigoso que o anterior.

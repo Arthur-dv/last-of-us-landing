@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type { ReactNode } from "react";
 
 const stats = [
   { value: "20+", label: "Anos Após o Surto" },
@@ -15,7 +16,7 @@ const paragraphs = [
   "Joel, um contrabandista implacável marcado por perdas pessoais, recebe a missão de escoltar Ellie — uma adolescente com um segredo extraordinário — pelo país até os Vagalumes, uma milícia rebelde que acredita que sua imunidade pode desvendar a cura para toda a humanidade.",
 ];
 
-export default function GameSummary() {
+export default function GameSummary({ ratingsSlot }: { ratingsSlot?: ReactNode }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -84,6 +85,17 @@ export default function GameSummary() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Card de avaliações ao vivo — RAWG API */}
+            {ratingsSlot && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.75 }}
+              >
+                {ratingsSlot}
+              </motion.div>
+            )}
 
             {/* Cordyceps info card */}
             <motion.div

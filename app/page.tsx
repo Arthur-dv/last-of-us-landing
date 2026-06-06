@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import GameSummary from "@/components/game-summary";
+import GameRatings from "@/components/game-ratings";
 import CharacterCarousel from "@/components/character-carousel";
 import EnemiesSection from "@/components/enemies-section";
 import VideoBackground from "@/components/video-background";
@@ -14,7 +15,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <GameSummary />
+        <GameSummary ratingsSlot={<GameRatings />} />
         <CharacterCarousel />
         <EnemiesSection />
         <footer className="relative py-12 border-t border-border bg-background">
